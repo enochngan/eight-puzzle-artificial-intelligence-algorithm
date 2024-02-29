@@ -1,0 +1,144 @@
+# File: results.txt
+# Author: Enoch Ngan (engan@bu.edu), 8/18/2023
+# Description: A file where I store all the results and reflections for my
+# final project.
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 18 16:46:20 2023
+
+@author: enochngan
+"""
+
+puzzles with 5-move optimal solutions
+-------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+random                 10 puzzles     7 moves       155.3 states
+BFS                    10 puzzles     5.0 moves     47.1 states
+DFS (depth limit 20)   10 puzzles     16.2 moves    19072.7 states
+DFS (depth limit 50)   10 puzzles     48.2 moves    49043 states
+Greedy Search          10 puzzles     5.4 moves     70.3 states
+A*                     10 puzzles     5 moves       6.5 states
+
+puzzles with 10-move optimal solutions
+-------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+random                 10 puzzles     10 moves      11084.9 states
+BFS                    10 puzzles     10 moves      746.4 states
+DFS (depth limit 20)   10 puzzles     18.8 moves    24858 states
+DFS (depth limit 50)   10 puzzles     49.2 moves    92287.3 states
+Greedy Search          10 puzzles     97.6 moves    7422.7 states
+A*                     10 puzzles     27.3 moves    27.3 states
+
+puzzles with 15-move optimal solutions
+-------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+random                 8 puzzles      19.75 moves   22053.125 states
+BFS                    10 puzzles     15 moves      12672 states
+DFS (depth limit 20)   10 puzzles     17.8 moves    68659 states
+DFS (depth limit 50)   10 puzzles     48.6 moves    111406.0 states
+Greedy Search          8 puzzles      127 moves     16399.875 states
+A*                     10 puzzles     15 moves      313.8 states 
+
+Reflection:
+
+For a 5-move optimal solution puzzle, algorithms that do not search to deep
+or are locally optimal are good algorithms to use. Hence, the BFS and random
+algorithm is good as it finds the optimal solution in minimal states tested 
+since the solution is not very deep. The Greedy Search is also relatively good 
+since it is locally optimal, while the A* search worked the best by also taking
+in depth to account when searching for a solution. 
+
+Although the random algorithm found the best relative solutions
+with the shortest amounts of moves for the 10-move optimal solution, they took 
+much longer, using more memory. These algorithms just so happened to find the best 
+routes by chance by testing much more states. On the other hand, the BFS was also 
+good here since the answer was not too deep. Although the A* algorithm took 
+relatively more moves, the amount of states tested and moves are the same, which 
+made the algorithm extremely fast comparably by calculating the total cost and 
+heuristic value of misplaced tiles. The Greedy Search most likely went on multiple 
+suboptimal paths by prioritizing locally optimal solutions.
+
+As problems that require more moves, such as the 15-move optimal solution puzzles,
+the A* algorithm begins to really shine as it takes the most optimal path
+by considering the total cost and heuristic value of misplaced tiles. Algorithms
+that could go in suboptimal and wrong paths do much worse, such as the random 
+and Greedy Search. The BFS search was not bad as well, as the solution was not
+too far in, but it has started to take up much more significant memory as the
+answer gets deeper. After testing all puzzles, it seems that the DFS algorithms 
+will consistently take up a lot of memory with misleading routes that test a 
+lot of states. However, they will eventually find a solution close to the depth 
+limit.
+
+
+heuristic 2
+----------------------------------------------------------------------
+This heurisitc uses Manhattan geometry to calculate the total distance 
+each tile has to travel in order to get to the goal destination. The heuristic
+loops through each misplaced tile, and finds the difference in row and col from
+the goal tile. It then returns the sum of all these differences. 
+
+puzzles with 18-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)  8 puzzles      145.75 moves  8345.75 states
+Greedy (heuristic h2)  10 puzzles     91.2 moves    396.4 states
+
+A* (heuristic h1)      10 puzzles     18 moves      1602 states
+A* (heuristic h2)      10 puzzles     18 moves      418.2 states
+
+
+puzzles with 21-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)  6 puzzles      102.7 moves   15315 states
+Greedy (heuristic h2)  10 puzzles     140 moves     649.5 states
+
+A* (heuristic h1)      10 puzzles     21 moves      6301.7 states
+A* (heuristic h2)      10 puzzles     21 moves      1075.3 states
+
+Reflection: 
+As mentioned before, the A* search worked great at finding the 
+
+puzzles with 24-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)  7 puzzles      129.7 moves   11284 states
+Greedy (heuristic h2)  10 puzzles     151.2 moves   634.6 states
+
+A* (heuristic h1)      10 puzzles     24 moves      26948.9 states
+A* (heuristic h2)      10 puzzles     24 moves      2987.3 states
+
+puzzles with 27-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)  4 puzzles      197.5 moves   4285.5 states
+Greedy (heuristic h2)  10 puzzles     177.2 moves   741.1 states
+
+A* (heuristic h1)      0 puzzles 
+A* (heuristic h2)      10 puzzles     27 moves      16066 states
+
+Reflection:
+
+The second heuristic, where I used Manhattan geometry to prioritize different
+states, worked much better than the heuristic that prioritized misplaced tiles. 
+As expected, the A* search algorithm was great at finding the optimal solution,
+while taking more time to parse through states using the second heuristic. 
+On the other hand, the Greedy Search was unable to find optimal solutions, and
+I often had to stop the search due to taking too long. 
+ 
+This is most likely due to the Greedy search going down suboptimal routes by
+being locally optimal, instead of globally optimal. However, since it is
+locally optimal, it took less states to find a solution than A* search for the
+second heuristic. Additionally, for the 27-move optimal search, the A* search
+took too long to find an optimal solution for the first heuristic, as it had to
+search through much more states as the solution for these puzzles begin to 
+get much deeper. 
