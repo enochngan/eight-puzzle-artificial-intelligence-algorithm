@@ -1,21 +1,3 @@
-# File: state.py
-# Author: Enoch Ngan (engan@bu.edu), 8/12/2023
-# Description: I create a State class that has multiple methods and attributes,
-# such as generate successors of the input State class. 
-    
-#
-# state.py (Final project)
-#
-# A State class for the Eight Puzzle
-#
-# name: Enoch Ngan
-# email: engan@bu.edu
-#
-# If you worked with a partner, put his or her contact info below:
-# partner's name:
-# partner's email:
-#
-
 from board import *
 
 # a 2-D list that corresponds to the tiles in the goal state
