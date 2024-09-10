@@ -1,16 +1,3 @@
-# File: timer.py
-# Author: Enoch Ngan (engan@bu.edu), 8/19/2023
-# Description: This is a given file to time code. 
-#
-# timer.py
-#
-# A class for objects that can be used to time code execution.
-#
-# Alex Breen, CS 111
-#
-# You should *NOT* need to change the contents of this file.
-#
-
 import time
 
 class Timer:
