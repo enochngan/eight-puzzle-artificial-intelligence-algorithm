@@ -1,21 +1,3 @@
-# File: eight_puzzle.py
-# Author: Enoch Ngan (engan@bu.edu), 8/12/2023
-# Description: A file that contains a driver function to test search.py, state.py
-# and board.py to perform a full-random state-space search on a given puzzle
-# eight_puzzle, and return a solution with steps included. 
-#
-# eight_puzzle.py (Final Project)
-#
-# driver/test code for state-space search on Eight Puzzles
-#
-# name: Enoch Ngan
-# email: engan@bu.edu
-#
-# If you worked with a partner, put his or her contact info below:
-# partner's name:
-# partner's email:
-#
-
 from searcher import *
 from timer import *
 import math
