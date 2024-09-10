@@ -1,21 +1,3 @@
-# File: searcher.py
-# Author: Enoch Ngan (engan@bu.edu), 8/12/2023
-# Description: I create a Searcher class object that has attributes and
-# methods such as keeping a list of states and performing a full-random
-# state-space search. 
-#
-# searcher.py (Final project)
-#
-# classes for objects that perform state-space search on Eight Puzzles  
-#
-# name: Enoch Ngan
-# email: engan@bu.edu
-#
-# If you worked with a partner, put his or her contact info below:
-# partner's name:
-# partner's email:
-#
-
 import random
 from state import *
 
