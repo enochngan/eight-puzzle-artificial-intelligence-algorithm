@@ -1,21 +1,3 @@
-# File: board.py
-# Author: Enoch Ngan (engan@bu.edu), 8/12/2023
-# Description: I create a Board class for an Eight puzzle game with basic
-# methods and attributes, such as for moving pieces and keeping track of them. 
-    
-#
-# board.py (Final project)
-#
-# A Board class for the Eight Puzzle
-#
-# name: Enoch Ngan
-# email: engan@bu.edu
-#
-# If you worked with a partner, put his or her contact info below:
-# partner's name:
-# partner's email:
-#
-
 class Board:
     """ A class for objects that represent an Eight Puzzle board.
     """
